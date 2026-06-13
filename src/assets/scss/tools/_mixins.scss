@@ -1,0 +1,37 @@
+@use "sass:map";
+@use "@/assets/scss/settings/tokens" as *;
+
+@mixin container {
+  width: min(calc(100% - 32px), $container-width);
+  margin-inline: auto;
+}
+
+@mixin section-space {
+  padding: 104px 0;
+
+  @include respond(tablet) {
+    padding: 84px 0;
+  }
+
+  @include respond(phone) {
+    padding: 68px 0;
+  }
+}
+
+@mixin panel {
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background: $color-surface;
+  box-shadow: $shadow-soft;
+}
+
+@mixin focus-ring {
+  outline: 3px solid rgba($color-mint, 0.45);
+  outline-offset: 4px;
+}
+
+@mixin respond($breakpoint) {
+  @media (max-width: map.get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
