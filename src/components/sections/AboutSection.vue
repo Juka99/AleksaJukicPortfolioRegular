@@ -54,7 +54,7 @@
                 <img
                   class="about__portrait"
                   :src="portraitImage"
-                  alt="Aleksa Jukic smiling"
+                  alt="Aleksa Jukić smiling"
                 />
               </div>
 
