@@ -34,7 +34,7 @@
             @click="copyEmail"
           >
             <i class="fa-solid fa-copy" aria-hidden="true"></i>
-            <span>{{ profile.email }}</span>
+            <span>My email</span>
           </button>
         </div>
 
@@ -210,18 +210,22 @@
 
   .contact__actions {
     display: grid;
+    width: min(100%, 300px);
+    min-width: 0;
     gap: 10px;
-    min-width: 230px;
   }
 
   .contact__email-wrap {
     position: relative;
+    min-width: 0;
   }
 
   .contact__button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    min-width: 270px;
     gap: 8px;
     border: 2px solid $color-ink;
     border-radius: $radius-sm;
@@ -236,6 +240,11 @@
     cursor: pointer;
   }
 
+  .contact__button span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
   .contact__button--primary {
     background: $color-ink;
     color: $color-white;
@@ -248,7 +257,7 @@
 
   .contact__notice {
     position: absolute;
-    right: 10px;
+    right: 16px;
     bottom: calc(100% + 12px);
     z-index: 2;
     border: 2px solid $color-ink;
@@ -261,6 +270,7 @@
     font-weight: 900;
     line-height: 1;
     white-space: nowrap;
+    transform: translate3d(0, 0, 0) scale(1) rotate(-2deg);
     pointer-events: none;
   }
 
@@ -291,18 +301,18 @@
 
   .contact-notice-enter-from {
     opacity: 0;
-    transform: translate3d(0, 8px, 0) scale(0.92) rotate(-2deg);
+    transform: translate3d(0, 8px, 0) rotate(-2deg);
   }
 
   .contact-notice-enter-to,
   .contact-notice-leave-from {
     opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1) rotate(-2deg);
+    transform: translate3d(0, 0, 0) rotate(-2deg);
   }
 
   .contact-notice-leave-to {
     opacity: 0;
-    transform: translate3d(0, -8px, 0) scale(0.96) rotate(-2deg);
+    transform: translate3d(0, -10px, 0) rotate(-2deg);
   }
 
   .contact__mascot {
@@ -367,6 +377,17 @@
       height: 74px;
       transform: rotate(14deg);
     }
+
+    .contact__notice {
+      left: 110px;
+      right: unset;
+      bottom: calc(100% + 8px);
+      font-size: 0.78rem;
+    }
+
+    .contact__button {
+      min-width: 0;
+    }
   }
 
   @include respond(phone) {
@@ -417,6 +438,10 @@
 
     .contact__mascot-image {
       width: 132px;
+    }
+
+    .contact__notice {
+      left: 60px;
     }
   }
 </style>
