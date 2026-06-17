@@ -4,7 +4,15 @@
 
     <div class="project-card__topline">
       <span class="project-card__type">{{ project.type }}</span>
-      <span class="project-card__marker" aria-hidden="true"></span>
+      <span class="project-card__logo-mark">
+        <img
+          v-if="project.logo"
+          class="project-card__logo"
+          :src="project.logo"
+          :alt="`${project.title} logo`"
+        />
+        <span v-else class="project-card__marker"></span>
+      </span>
     </div>
 
     <h3 class="project-card__title">{{ project.title }}</h3>
@@ -18,6 +26,7 @@
 
     <div class="project-card__actions">
       <a
+        v-if="project.liveUrl && project.liveUrl !== project.codeUrl"
         class="project-card__link project-card__link--primary"
         :href="project.liveUrl"
         target="_blank"
@@ -27,6 +36,9 @@
       </a>
       <a
         class="project-card__link"
+        :class="{
+          'project-card__link--primary': project.liveUrl === project.codeUrl,
+        }"
         :href="project.codeUrl"
         target="_blank"
         rel="noreferrer"
@@ -140,6 +152,26 @@
     box-shadow: 5px 5px 0 $color-ink;
   }
 
+  .project-card__logo-mark {
+    display: grid;
+    width: 100px;
+    height: 100px;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 2px solid $color-ink;
+    border-radius: $radius-sm;
+    background: $color-white;
+    box-shadow: 4px 4px 0 $color-ink;
+    position: absolute;
+    right: 2px;
+    top: -2px;
+  }
+
+  .project-card__logo {
+    width: 90%;
+    object-fit: contain;
+  }
+
   .project-card__corner {
     position: absolute;
     top: 22px;
@@ -153,6 +185,14 @@
 
   .project-card--coral .project-card__marker {
     color: $color-coral;
+  }
+
+  .project-card--coral .project-card__logo-mark {
+    background: rgba($color-coral, 0.12);
+  }
+
+  .project-card--mint .project-card__logo-mark {
+    background: rgba($color-mint, 0.5);
   }
 
   .project-card--sky .project-card__marker {

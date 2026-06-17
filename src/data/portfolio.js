@@ -11,44 +11,26 @@ export const profile = {
 
 export const projects = [
   {
-    title: 'SIGMA',
-    type: 'Brand Website',
+    title: 'Iterate',
+    type: 'Self Improvement',
     description:
-      'A polished front-end build focused on bold visual rhythm, responsive layout, and a clear brand presentation.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    liveUrl: 'https://juka99.github.io/Sigma/',
-    codeUrl: 'https://github.com/Juka99/Sigma',
+      'A focused React app for improving your life with iteration, built with a clean feature structure, Supabase, and polished product-style UI.',
+    tags: ['React', 'TypeScript', 'Supabase'],
+    logo: '/iterateLogo.png',
+    liveUrl: 'https://iterate-jade.vercel.app/',
+    codeUrl: 'https://github.com/Juka99/.iterate',
     accent: 'mint',
   },
   {
-    title: 'Darken Inc.',
-    type: 'Landing Page',
+    title: 'Orbit',
+    type: 'Personal Dashboard',
     description:
-      'A darker, atmosphere-heavy website with custom sections, animation details, and a more cinematic visual direction.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    liveUrl: 'https://juka99.github.io/Darken-Inc/',
-    codeUrl: 'https://github.com/Juka99/Darken-Inc',
+      'A Vue 3 and TypeScript app for keeping important personal things in check, starting with notes, water, and calorie tracking.',
+    tags: ['Vue 3', 'TypeScript', 'Supabase'],
+    logo: '/orbitLogo.png',
+    liveUrl: 'https://orbit-ten-murex.vercel.app/',
+    codeUrl: 'https://github.com/Juka99/Orbit',
     accent: 'coral',
-  },
-  {
-    title: 'Henry',
-    type: 'Beta Project',
-    description:
-      'An experimental front-end project with custom UI touches and a playful identity, built while exploring stronger interaction patterns.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    liveUrl: 'https://juka99.github.io/Henry/',
-    codeUrl: 'https://github.com/Juka99/Henry',
-    accent: 'sky',
-  },
-  {
-    title: 'FitExtreme',
-    type: 'Fitness App',
-    description:
-      'A fitness-focused project with energetic screens, routing, responsive composition, and practical app-style structure.',
-    tags: ['Vue', 'JavaScript', 'CSS'],
-    liveUrl: 'https://juka99.github.io/FitExtreme/#/',
-    codeUrl: 'https://github.com/Juka99/FitExtreme/tree/gh-pages',
-    accent: 'amber',
   },
 ];
 
